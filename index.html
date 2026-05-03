@@ -10,29 +10,33 @@
 
     body {
       margin: 0;
-      font-family: Arial;
+      font-family: 'Arial', sans-serif;
       background-color: #0f172a;
       color:white;
-      text-align: center;
+      line-height: 1.6;
     }
     /* NAVBAR */
     .navbar {
-      background-color: #020617;
+      background-color: rgba(2,6 ,23 ,0.9);
       padding: 15px;
       position: sticky;
       top: 0;
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
 
     .navbar a {
       color: white;
       text-decoration: none;
-      margin: 15px;
       font-size: 16px;
       transition: 0.3s;
     }
 
     .navbar a:hover {
       color: #38bdf8;
+      transform: scale(1.1);
     }
 
     /* HERO */
@@ -50,30 +54,93 @@
       background-color: #38bdf8;
       color: black;
       border:none;
-      padding: 12px 20px;
+      padding: 12px 22px;
       font-size: 16px;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
-      margin-top: 15px;
       transition: 0.3s;
     }
 
     button:hover {
-      background-color: #0ea5e9;
-      transform: scale(1.05);
+      background: #0ea5e9;
+      transform: scale(1.08);
     }
 
     /* SECTIONS */
     .section {
       background: #1e293b;
       padding: 30px;
-      margin: 40px auto;
-      border-radius: 12px;
-      max-width: 600px;
+      margin: 30px auto;
+      border-radius: 15px;
+      max-width: 650px;
+      box-shadow: 0 10px 25px ragba(0,0,0,0.3);
     }
 
     h2 {
       color: #38bdf8;
+    }
+
+    /*PROJECT-CARD*/
+    .project-card {
+      background: #020617;
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+
+    .project-card h3 {
+      color: #38bdf8;
+    }
+
+    .btn{
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #38bdf8;
+      color: black;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #0ea5e9;
+    }
+    .section {
+      opacity:0;
+      transform:translateY(20px);
+      animation:fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+          flex-direction: column;
+          gap: 10px;
+      }
+
+      .hero {
+          padding-bottom: 40px 15px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .section{
+           margin: 20px 10px;
+           padding: 20px;
+      }
+
+      button {
+          width: 100%;
+      }
     }
     </style>
 </head>
@@ -85,13 +152,21 @@
       <a href="#">Home</a>
       <a href="#about">About</a>
       <a href="#skills">skills</a>
+      <a href="#projects">projects</a>
+      <a href="#services">services</a>
       <a href="#contact">contact</a>
   </div>
 
   <!--HERO-->
   <div class="hero>">
-       <h1>Welcome to Nexora Hub👋</h1>
-       <p>I am learning web development and building real projects.</p>
+       <h1>Hi, I'm Lafuezz👋</h1>
+       <p>I help people fix computers, unlock phones, and build modern websites.</p>
+
+       <p style="color:#22c55e;
+       font-weight:bold;">
+                    Available for work -contact me 
+                    anytime
+                       </p>
 
        <button onclick="alert('Thanks for visiting Nexora Hub!')">
         contact me
@@ -107,10 +182,52 @@
        <p>HTML, CSS, Javascript(beginner)</p>
   </div>
 
+  <!--PROJECTS-->
+  <div class="section" id="projects">
+       <h2>Projects</h2>
+       
+       <div class="project-card">
+        <h3>Nexora Hub Website</h3>
+        <P>A modern personal portfolio website built using HTML, CSS, and Javascript.</P>
+        <a href="https://lafuezz.github.io/nexora-hub/" class="btn" target="_blank">
+                 View Project
+        </a>
+       </div>
+  </div>
+
+  <!--SERVICES-->
+  <div class="section" id="services">
+       <h2>services</h2>
+
+       <div class="project-card">
+            <h3>Computer Repair</h3>
+            <p>I help fix slow laptops,
+              install windows, and solve software 
+              issues quickly, reliablly and professionally to get your devices running smoothly again.</p>
+  </div>
+
+  <div class="project-card">
+       <h3>Phone Unlocking</h3>
+       <p>I assist with removing locks 
+        like M-KOPA and improving Phone
+        usability safely and professionally.</p>
+  </div>
+
+  <div class="project-card">
+       <h3>Website creation</h3>
+       <p>I build modern, clean, and responsive websites for individuals and small businesses.</p>
+  </div>
+  </div>
+
+  
   <!--CONTACT-->
   <div class="section" id="contact">
     <h2>contact</h2>
     <p>You can reach me through this website.</p>
+    <a href="https://wa.me/254714577593?text=Hello%20I%saw%your%20website%20and%20I%20need%help"
+    target="_blank" class="btn">
+            Chat with me on whatsapp
+  </a>
   </div>
 
 </body>
